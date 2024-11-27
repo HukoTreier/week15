@@ -1,0 +1,71 @@
+<!--süstib/kuvab siia andmed, mis tuleb serveri poolt-->
+<!--html andmed tulevad serverilt ehk päring serverile-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/caf2790dd9.js" crossorigin="anonymous"></script><!--link to fontawesome script-->
+    <link rel="stylesheet" href="css/style.css">
+    <title>Week12</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="form-container"> <!-- toob searchi pealehele, otsides läheb /search-->
+            <form action="/search" method="POST"> <!-- otsingu vormi täpsustus (POST), kasutatakse andmete serverile saatmiseks-->
+                <input type="text" name="movieTitle" placeholder="Find a movie"> <!-- name muutujasse salvestatakse andmed, mis kasutaja sisestab-->
+                <button type="submit">Search</button> <!-- submit- nupule vajutades saadetakse sisestatud info serverile -->
+            </form> 
+        </div>
+
+        <div class="movie-card">
+            <h2 class="movie-title"><%= dataToRender.title %></h2> <!-- .title info moviedb serverist-->
+            <p class="movie-genres">
+                <span class="movie-rating">PG-13</span>  
+                <span class="release-date"><%= releaseYear %></span> <!--inline tüüpi element, sisu kuvatakse ühel joonel-->
+                <span class="genres"><%= genres %></span>
+                <span class="movie-duration"><%= dataToRender.runtime %> minutes</span>
+            </p>
+            <div class="movie-poster-container">
+                <img class="movie-poster" src="<%= poster %>" alt="Poster">
+            </div>
+
+            <div class="movie-info-container">
+                <p class="movie-info-quote"><%= dataToRender.tagline %></p>
+
+                <h2 class="movie-info-overview-title">overview</h2>
+                <p class="movie-info-overview"><%= dataToRender.overview %></p>
+
+                <div class="movie-info-actions">
+                    <ul>
+                        <li><a href="#" class="add-fav"><i class="fas fa-heart"></i></a></li>
+                        <li><a href="#" class="add-bookmark"><i class="fas fa-bookmark"></i></a></li>
+                        <li><a href="#" class="rate-movie"><i class="fas fa-star-half-alt"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <h3>Find me to discuss the movie</h3>
+             
+            <ul>
+                <li> <a href="#">Twitter <i class="fa-brands fa-twitter"></i><!--fontawesome twitter icon--></a></li>
+                <li> <a href="#">Instagram <i class="fa-brands fa-instagram"></i><!--fontawesome instagram icon--></i></a> </li>
+                <li> <a href="#">Facebook <i class="fa-brands fa-facebook"></i><!--fontawesome facebook icon--></a> </li>
+            </ul>
+    
+            <p>Huko Treier &#169; <span class="year"><%= year %></span></p> <!--dünaamiline aasta, serveripoolne aeg-->
+    
+        </footer>
+
+
+    </div>
+    
+    
+</body>
+</html>
+</body>
+</html>

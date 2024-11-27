@@ -1,0 +1,43 @@
+<!-- nagu html fail-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Week12 Search</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <form action="/search" method="POST"> <!-- otsingu vormi täpsustus (POST), kasutatakse andmete serverile saatmiseks-->
+                <input type="text" name="movieTitle" placeholder="Find a movie"> <!-- name muutujasse salvestatakse andmed, mis kasutaja sisestab-->
+                <button type="submit">Search</button> <!-- submit- nupule vajutades saadetakse sisestatud info serverile -->
+            </form> 
+        </div>
+
+         <% if(movieDetails) { %> <!-- kui moviedetails objektis on andmed ehk ei ole tühi objekt, siis kuvab seda ala all. mitte kuvada title, genre jne, kui andmeid pole sisestatud-->
+        <div class="result-container"> <!-- otsingutulemuste konteiner -->
+            <ul class="movie-data-list"> <!-- loetelu -->
+                <li><span>Title:</span><%= movieDetails.title %></li> <!-- objekt ja omadus. süstimine -->
+                <li><span>Year:</span><%= movieDetails.year %></li> <!-- teeb moviedetails objekti lahti ja võtab andmed väärtustega -->
+                <li><span>Genres:</span><%= movieDetails.genres %></li>
+                <li><span>Overview:</span><%= movieDetails.overview %></li>
+            </ul>
+
+            <div class="image-container"> <!-- pilt -->
+                <img src="<%= movieDetails.posterUrl %>" alt="">
+            </div>
+
+            <div class="back-button-container"> <!-- Nupp pealehele tagasi minemiseks -->
+                <a href="/">Home</a>
+            </div>
+
+        </div>
+
+        <% } %>
+
+    </div>
+
+</body>
+</html>

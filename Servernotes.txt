@@ -1,0 +1,17 @@
+päris veebilehekülg, mis ei ole enam localhost / git
+võimalus tehisintellekt lisada, aga peab olema veebirakendus backendiga välisserveril
+
+
+server.js fail
+git bash:
+npm init -y
+npm i express axios
+npm i ejs
+
+npm start paneb serveri käima
+ctrl c terminali peal paneb kinni
+
+ejs sarnane html-ga
+
+public kaust, mille sees on css kaust ja css fail et saaks css kasutada
+

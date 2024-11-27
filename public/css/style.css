@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');/*import google fonts here*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Roboto',sans-serif;
+    color: #151515;
+}
+
+body {
+    background-color: #f0f0f0; /* taustavärv */
+}
+
+.movie-card {
+    margin-top: 5rem;
+    height: 800px;
+    text-align: center;
+}
+
+/*animatsioon 4- pealkiri tuleb ülevalt alla*/
+.movie-title {
+    text-transform: uppercase;
+    /* add for animation */
+    transform: translateY(-150px); /* tõstab pealkirja üles */
+    animation: slide-from-top 3.5s ease-in-out forwards;
+}
+
+@keyframes slide-from-top{
+    80% {transform: translateY(12px);}
+    100% {transform: translateY(0);}
+}
+
+.movie-poster-container img {
+    margin-top: 2rem;
+    height: 500px; 
+    border-radius: 5%;
+    transition: all 1s; /* anim kestab 1s */
+        cursor: pointer; /* kursor muutub käeks */
+}
+
+/*animatsioon 1 - hover effekt */
+.movie-poster-container img:hover{
+transform: scale(1.1); /*kursor peal, siis 1.1x suurus, 1s jooksul */
+        box-shadow: 8px 8px 8px -4px rgb(65, 65, 65); /*lisab pildile varjundi */
+    }
+
+/*animatsioon 2 - pilt ilmub vasakult paremale*/
+.movie-poster-container{
+    position: relative;
+    left: -80rem;
+    animation: slide-from-left 3.5s ease-in-out forwards;
+}
+
+@keyframes slide-from-left{
+    80% {left: 1.5rem;}
+    100% {left: 0;}
+}
+/*animatsioon 3 - tekst ilmub 3.5s jooksul*/
+.movie-card > *:not(.movie-poster-container):not(.movie-title){ /* v.a pilt ja pealkiri */
+    opacity: 0;
+        /* for animation */
+        animation: fade-in 3.5s ease-in-out forwards;
+        animation-delay: 1s;
+    }
+
+    @keyframes fade-in{
+        100% {opacity: 1;}
+    }
+
+.movie-rating {
+    display: inline-block;
+    border: 1px solid #151515;
+    padding: 0.4rem;
+    border-radius: 5px;
+}
+
+.movie-duration {
+    margin-left: 1rem;
+    letter-spacing: 0.2rem;
+}
+
+.movie-duration:before {
+    content: "\2022";
+}
+
+.movie-info-quote {
+    color: #151515a4;
+    font-style: italic;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.movie-info-overview-title {
+    text-transform: capitalize;
+    letter-spacing: 0.1rem;
+}
+
+.movie-info-actions {
+    font-size:1.1rem;
+}
+
+.movie-info-actions ul {
+    list-style: none;
+}
+
+.movie-info-actions ul li {
+    display: inline-block;
+    margin-right: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: rgb(3, 37, 65);
+    
+}
+
+.movie-info-actions ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer {
+    margin-top: 2rem;
+    text-align: center;
+    color: #777;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer ul li {
+    display: inline-block;
+    margin-top: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+}
+
+footer ul li a {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #777;
+}
