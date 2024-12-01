@@ -11,7 +11,7 @@ app.use(express.json()); // pakib serveri vastuse kokku jsoniks
 app.get('/', (req, res) => { // get päringute haldamine, /-pealeht. req- kasutaja päring, res- serveri vastus
     
     
-    let url = 'https://api.themoviedb.org/3/movie/872585?api_key=8d99420b04a2ec7a516f47042c2691aa'; // kust andmeid võetakse, let sest const ei saa hiljem muuta. võtit enam kätte ei saa- serveripoolne
+    let url = 'https://api.themoviedb.org/3/movie/157336?api_key=8d99420b04a2ec7a516f47042c2691aa'; // kust andmeid võetakse, let sest const ei saa hiljem muuta. võtit enam kätte ei saa- serveripoolne
     axios.get(url) // axios haldab get päringut
     .then(response => { // paneb koodi ootele kuni serverilt on vastus käes
         let data = response.data; // muutujasse data salvestatakse objekt response.data

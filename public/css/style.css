@@ -101,6 +101,11 @@ transform: scale(1.1); /*kursor peal, siis 1.1x suurus, 1s jooksul */
     margin-bottom: 1rem;
 }
 
+.movie-info-overview { /* tekst ei lähe chatboti alla */
+    max-width: 1100px; 
+    margin: 0 auto; 
+}
+
 .movie-info-overview-title {
     text-transform: capitalize;
     letter-spacing: 0.1rem;
